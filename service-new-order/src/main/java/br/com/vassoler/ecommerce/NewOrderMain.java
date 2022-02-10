@@ -12,7 +12,7 @@ public class NewOrderMain {
                 int i = 1;
                 while (i < 5) {
                     var key = UUID.randomUUID().toString();
-                    var order = new Order(UUID.randomUUID().toString(), UUID.randomUUID().toString(), new BigDecimal(Math.random() * 5000 + 1));
+                    var order = new Order(UUID.randomUUID().toString(), UUID.randomUUID().toString(), new BigDecimal(5 + i));
                     //send(tópico, key, valor)
                     orderDispatcher.send("ECOMMERCE_NEW_ORDER", key, order);
                     var email = new Email("Teste", "Teste do envio do e-mail");

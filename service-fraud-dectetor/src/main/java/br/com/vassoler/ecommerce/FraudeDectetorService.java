@@ -21,6 +21,14 @@ public class FraudeDectetorService {
         System.out.println("Valor: " + record.value());
         System.out.println("Partição: " + record.partition());
         System.out.println("Offset" + record.offset());
+        try {
+            Thread.sleep(2000);
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        var order = record.value();
+        System.out.println("Registro.: " + order.toString());
+        System.out.println("Ordem processada");
 
     }
 
